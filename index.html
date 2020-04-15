@@ -1,0 +1,117 @@
+<html><head>
+  
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+
+   
+<title>predictive analysis of medicines</title></head>
+
+<link href="StyleSheet.css" rel="stylesheet" type="text/css">
+ <div class="row">
+   
+   <center><p align="right"><p align="right"><p align="right"> <table border="1" width="500">
+    <tr align="right">
+      <td>
+        <div class="col-md-3 col-sm-3 col-xs-6"><a href="#" class="btn btn-sm animated-button victoria-two">Login</a> 
+        </div>
+  </div>
+</td>
+</tr>
+</table></p></p></p></center>
+<body>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    
+    <h1>Predictive Analysis of medicines</h1>
+    
+  </div>
+</div>
+<div class="container"> 
+  <!-- Example row of columns -->
+  
+  <div class="row">
+    <div class="col-md-12 text-center">
+    </div>
+  </div>
+
+  <form    "id="searchthis" action="/search" style="display:inline;" method="get">
+<input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search"/>
+<input id="namanyay-search-btn" value="Go" type="submit"/>
+ </form>
+ 
+
+<p><div class="row">
+    
+    <center><table> <p align="right"><div id="mapid" style= " float:right; width: 800px; height: 600px;"></div>
+
+}
+
+<script>
+  var str="eUPHC";
+  var str1="CeraGem Health Care Center";
+  var str2="Pradhanamantri Bharatiya Jana Aushadi Kendram";
+  var str3="Urban Health Centre";
+  var str4="Govt ENT Hospital";
+  var str5="Govt TB and Chest Hospital";
+  var str6="MGR Hospital";
+  var str7="Kurnool Government General Hospital";
+  var str8="Government General Hospital";
+  var str9="Government Hospital Rajahmundry";
+  var str10="Gsl Trust Cancer Hospital";
+  var str11="Urban Primary Health Centre";
+  var str12="Urban  Health Care Centre";
+  var str13="RIMS";
+
+
+  var planes = [
+    [str.link(""),16.50442,80.63119],
+    [str1.link(""),16.49549,80.67318],
+    [str2.link(""),16.7245,81.12543],
+    [str3.link(""),15.48639,78.48241],
+    [str4.link(""),17.73491,83.33442],
+    [str5.link(""),17.72774,83.33454],
+    [str6.link(""),17.73491,83.33442],
+    [str7.link(""),15.82021,78.04022],
+    [str8.link(""),16.51049,80.61753],
+    [str9.link(""),17.00871,81.78404],
+    [str10.link(""),17.00871,81.78404],
+    [str11.link(""),17.505607,78.514766],
+    [str12.link(""),16.28944,80.45092],
+    [str13.link(""),15.49752,80.05318],
+    ];
+
+  var mymap = L.map('mapid').setView([15.284185114076433,78.837890625], 7.0);
+
+
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+      '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+      'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox.streets'
+  }).addTo(mymap); 
+    
+
+ for (var i = 0; i < planes.length; i++) {
+      marker = new L.marker([planes[i][1],planes[i][2]])
+        .bindPopup(planes[i][0])
+        .addTo(mymap);
+      }
+
+ </script>
+
+</table></p></center>    
+   
+  
+   
+</body>
+  
+  </html>
